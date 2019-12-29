@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="generate.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Drop List</title>
+    <script type="text/javascript" src="id_to_name.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+      <br />
+      <div id="itemsMenu">
+       <div class="form-group">
+        <div class="col-md-12">
+
+            <select class="col-md-2 input-inline" onchange="onDateSelect(this.value)">
+                <option value ="day/">day</option>
+                <option value ="week/">week</option>
+                <option value ="month/">month</option>
+
+            </select>
+            <span>&nbsp</span>
+
+            <select id="items" onchange="fetchData(this.value)" class="col-md-4 input-inline">
+
+            </select>
+            <span>&nbsp</span>
+              <input type="text"  id="nameInput" placeholder=" name" >
+              <span>&nbsp</span>
+                <button onclick="nameSearch(nameInput.value)">Enter</button>
+
+          
+   
+      </div>
+      
+    </div>
+    <table class="table table-striped table-dark">
+        <thead>
+          
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Name</th>
+              <th scope="col">Item</th>
+              <th scope="col">Count</th>
+            </tr>
+          
+        </thead>
+        <tbody id="tableList">
+
+        </tbody>
+      </table>
+      <script>load();</script>
+      
+    </div>
+</body>
+</html>
